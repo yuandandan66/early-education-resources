@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>正面管教 · 100个亲子对话脚本</title>
+<style>
+  @page { size: A4; margin: 12mm 15mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+    font-size: 11px;
+    line-height: 1.7;
+    color: #333;
+    max-width: 190mm;
+    margin: 0 auto;
+  }
+
+  /* Cover */
+  .cover {
+    text-align: center;
+    padding: 40px 0 30px;
+    page-break-after: always;
+  }
+  .cover .emoji { font-size: 52px; margin-bottom: 10px; }
+  .cover h1 {
+    font-size: 28px;
+    color: #C0392B;
+    margin: 10px 0;
+    font-weight: 800;
+  }
+  .cover .subtitle {
+    font-size: 15px;
+    color: #888;
+    margin-bottom: 20px;
+  }
+  .cover .desc {
+    font-size: 13px;
+    color: #555;
+    max-width: 440px;
+    margin: 0 auto 30px;
+    line-height: 2;
+  }
+  .cover .meta {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 40px;
+  }
+  .cover .tag {
+    display: inline-block;
+    background: #FFF0EC;
+    color: #E85D3A;
+    padding: 4px 14px;
+    border-radius: 12px;
+    margin: 4px;
+    font-size: 12px;
+  }
+
+  /* Category header */
+  .category-header {
+    background: linear-gradient(135deg, #FFF0EC, #FFE8D6);
+    border-left: 4px solid #E85D3A;
+    padding: 10px 16px;
+    margin: 0 0 12px;
+    page-break-before: always;
+  }
+  .category-header h2 {
+    font-size: 20px;
+    color: #C0392B;
+    margin: 0;
+  }
+  .category-header .cat-desc {
+    font-size: 12px;
+    color: #8B7355;
+    margin-top: 4px;
+  }
+
+  /* Scenario header */
+  .scenario-header {
+    background: #FAFAFA;
+    border: 1px solid #EED;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 16px 0 6px;
+  }
+  .scenario-header h3 {
+    font-size: 15px;
+    color: #444;
+  }
+  .scenario-header .sc-desc {
+    font-size: 11px;
+    color: #999;
+    margin-top: 2px;
+  }
+
+  /* Script card */
+  .script-card {
+    border: 1px solid #EEE;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    background: #FFF;
+  }
+  .script-card .num {
+    display: inline-block;
+    width: 22px; height: 22px;
+    line-height: 22px; text-align: center;
+    border-radius: 50%;
+    background: #E85D3A;
+    color: #FFF;
+    font-size: 12px;
+    font-weight: 700;
+    margin-right: 8px;
+  }
+  .script-card .trigger {
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4px;
+  }
+  .script-card .wrong {
+    display: flex;
+    margin: 3px 0;
+    font-size: 11px;
+  }
+  .script-card .wrong .label {
+    color: #FFF;
+    background: #E74C3C;
+    padding: 1px 8px;
+    border-radius: 8px;
+    font-size: 10px;
+    flex-shrink: 0;
+    margin-right: 8px;
+    line-height: 18px;
+  }
+  .script-card .wrong .txt { color: #888; font-style: italic; }
+  .script-card .correct {
+    display: flex;
+    margin: 3px 0;
+    font-size: 11px;
+  }
+  .script-card .correct .label {
+    color: #FFF;
+    background: #27AE60;
+    padding: 1px 8px;
+    border-radius: 8px;
+    font-size: 10px;
+    flex-shrink: 0;
+    margin-right: 8px;
+    line-height: 18px;
+  }
+  .script-card .correct .txt { color: #2C3E50; font-weight: 600; }
+  .script-card .principle {
+    font-size: 10px;
+    color: #999;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px dotted #EEE;
+  }
+
+  /* Section divider */
+  .section-tip {
+    background: #FFFBF5;
+    border: 1px dashed #E8D5C4;
+    padding: 6px 12px;
+    margin: 14px 0;
+    border-radius: 4px;
+    font-size: 11px;
+    color: #8B7355;
+    text-align: center;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 11px;
+    color: #BBB;
+    page-break-before: always;
+  }
+  .footer .qr-hint {
+    background: #FFF0EC;
+    padding: 14px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 10px;
+    font-size: 12px;
+    color: #C0392B;
+  }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; }
+    .script-card { break-inside: avoid; }
+    .scenario-header { break-after: avoid; }
+    .category-header { break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ======== COVER ======== -->
+<div class="cover">
+  <div class="emoji">💬</div>
+  <h1>正面管教<br>100个亲子对话脚本</h1>
+  <div class="subtitle">——随时可用的"说对话"速查手册</div>
+  <div class="desc">
+    覆盖 20 个育儿场景，每个场景 5 个变体<br>
+    每个脚本包含：触发情境 + 常见错误反应 + 正面管教话术 + 原书原理说明<br>
+    由 WorkBuddy AI 基于《正面管教 A-Z》深度拆解<br>
+    关注公众号 <strong>卷不动躺不平的虎妈</strong> 获取更多
+  </div>
+  <div>
+    <span class="tag">情绪冲突</span>
+    <span class="tag">习惯养成</span>
+    <span class="tag">社交场景</span>
+    <span class="tag">权力斗争</span>
+  </div>
+  <div class="meta">2026年6月 · 卷不动躺不平的虎妈 出品</div>
+</div>
+
+<!-- ======== CAT 1: 情绪冲突类 ======== -->
+<div class="category-header">
+  <h2>🔴 情绪冲突类（5个场景 × 5个变体 = 25个脚本）</h2>
+  <div class="cat-desc">当孩子情绪爆发时，最考验父母的"知行合一"。这部分话术的核心逻辑是：先连接，后纠正。</div>
+</div>
+
+<!-- 场景1: 发脾气 -->
+<div class="scenario-header">
+  <h3>场景 1 · 发脾气 / 情绪崩溃</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.45-51 "爱发脾气或好斗的孩子"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">1</span>
+  <div class="trigger">🧒 孩子因为积木搭不好，突然把积木全推倒，大哭大叫"我不要了！"</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"别哭了！重新搭一个不就好了吗？有什么好哭的！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（蹲下来，语气平静）"我看到你很失望，搭了那么高突然倒了。你想让妈妈抱一下，还是先喝口水？"</span></div>
+  <div class="principle">📖 原理：先接纳情绪（"我看到你很失望"），再提供有限选择。不要说"重新搭就好"，这是在否定孩子的挫败感。参考 P.46"理解孩子的感受"。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">2</span>
+  <div class="trigger">🧒 孩子想要零食被拒绝，开始尖叫跺脚。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"别叫了！丢不丢人！再叫就别想吃了！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"我知道你很想吃那个零食。但我已经说了不行。等你安静下来，我们一起去看看水果篮里有什么。"</span></div>
+  <div class="principle">📖 原理：和善与坚定并行——和善是不否定他的渴望，坚定是不改变决定。参考 P.47"和善而坚定"。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">3</span>
+  <div class="trigger">🧒 孩子从幼儿园回来就无缘无故发脾气，问他什么都不说。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你又怎么了？问你什么都不说，你倒是说话啊！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"妈妈感觉你今天好像攒了一肚子气，像个小气球快要炸了。你想自己待一会儿，还是妈妈在旁边陪着你？"</span></div>
+  <div class="principle">📖 原理：用比喻帮孩子命名情绪，降低防御。给孩子空间选择权。参考 P.49"鼓励孩子表达感受"。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">4</span>
+  <div class="trigger">🧒 孩子因为在公园玩不肯回家，被强行抱走后一路哭喊打妈妈。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你再打我一下试试！太不像话了！回去不许看电视！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（抱住孩子的手，语气温和但坚定）"你可以生气，但不能打人。妈妈先拉住你的手，等你准备好了，我们就好好走回家。"</span></div>
+  <div class="principle">📖 原理：允许情绪，限制行为。"可以生气"是接纳情绪，"不能打人"是设立界限。参考 P.50"设立明确的界限"。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">5</span>
+  <div class="trigger">🧒 孩子在公众场合发脾气躺地上，周围人都看着。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"快起来！大家都看着呢，你丢不丢人！不起来我走了！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（蹲下来，小声说）"地上凉，妈妈在这儿等你。等你准备好了，我们就一起去那边看小鱼。"（安静等，不催促）</span></div>
+  <div class="principle">📖 原理：不在情绪最高点时讲道理。用转移注意力和"等你准备好了"给孩子台阶。参考 P.48"积极的暂停"。</div>
+</div>
+
+<!-- 场景2: 哭闹 -->
+<div class="scenario-header">
+  <h3>场景 2 · 哭闹不止</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.52-54 "爱哭"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">6</span>
+  <div class="trigger">🧒 孩子摔倒擦破了一点皮，哭得撕心裂肺。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"就破了一点点皮，不疼不疼，男子汉不哭！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"哎哟，摔倒了，一定很疼吧。来妈妈看看。你想贴一个创可贴，还是吹一吹就好了？"</span></div>
+  <div class="principle">📖 原理：先共情疼痛（"一定很疼吧"），不要说"不疼"——这是在否定孩子的真实感受。参考 P.53"认可孩子的感受"。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">7</span>
+  <div class="trigger">🧒 孩子想要一个新玩具，哭闹说"别的小朋友都有"。  </div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"别人有你就得有啊？别人家还有大别墅呢！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"我看到你很想要那个玩具，XX也有所以你觉得不公平，对吗？我们可以把它写在你的'愿望清单'上。下次生日或节日的时候，你可以从清单里选一个。"</span></div>
+  <div class="principle">📖 原理：同理孩子的比较心理，用"愿望清单"疏导即时占有欲，把"不行"变成"以后可以"。参考 P.54"教孩子延迟满足"。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">8</span>
+  <div class="trigger">🧒 早上起床哭闹不肯穿衣服，嫌衣服不好看。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"这衣服哪里不好了？你天天挑三拣四的，快点穿上要迟到了！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你不喜欢这件呀。那今天晚上我们提前挑好明天的衣服，现在你先在衣橱里选一件——这件蓝色还是这件红色？"</span></div>
+  <div class="principle">📖 原理：有限选择给孩子掌控感，同时把"提前准备"变成约定。参考 P.81-83"穿衣方面的权力之争"。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">9</span>
+  <div class="trigger">🧒 孩子做噩梦醒来大哭，说害怕、不肯再睡。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"梦是假的，有什么好怕的！快睡吧，明天还要早起呢。"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（抱着孩子）"做噩梦真的会让人很害怕，妈妈小时候也做过噩梦。你想跟妈妈讲讲梦到了什么，还是我们画一张'安全咒语'贴在床头？"</span></div>
+  <div class="principle">📖 原理：恐惧需要被看见而不是被否定。用"妈妈小时候也"拉近距离，用绘画帮孩子把恐惧具象化并控制它。参考 P.52"共情与陪伴"。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">10</span>
+  <div class="trigger">🧒 看电视时间到了不肯关，你一关他就躺沙发上嚎啕大哭。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"哭也没用！说了看20分钟就是20分钟，明天也别想看了！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"我知道你还没看够，小猪佩奇太好看了。我们的约定是20分钟，现在时间到了。你是想按遥控器关，还是妈妈帮你关？关完之后我们一起拼乐高。"</span></div>
+  <div class="principle">📖 原理：事先约定 + 有限选择 + 替代方案。不要说"明天也别想看"——这是惩罚，不是教育。参考 P.47"跟进执行已经达成的约定"。</div>
+</div>
+
+<!-- 场景3: 打人/咬人 -->
+<div class="scenario-header">
+  <h3>场景 3 · 打人 / 咬人 / 推人</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.110-113 "打架/咬人"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">11</span>
+  <div class="trigger">🧒 孩子和别的小朋友抢玩具，推了对方一把。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你怎么能推小朋友呢！快道歉！不道歉今天就别玩了！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（先分开两个孩子，蹲在孩子面前）"我看到你很想要那个玩具，所以推了他。但推人是不行的。你看看他的脸，他很难过。等他准备好了，我们要不要问问他'你还好吗'？"</span></div>
+  <div class="principle">📖 原理：先理解动机（想要玩具），再指出行为问题（推人不行），然后引导共情（看看他的脸）。不强迫道歉——强迫的道歉不是真心的。参考 P.111。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">12</span>
+  <div class="trigger">🧒 孩子生气时咬妈妈的胳膊。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"啊！你敢咬我？我咬你一口你看看疼不疼！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（立刻拿开手臂，认真看着孩子）"很疼。我知道你生气了，但不能咬人。你可以告诉我'我很生气'，或者用拳头捶这个垫子。"</span></div>
+  <div class="principle">📖 原理：让孩子感受真实后果（妈妈疼了），同时教替代行为（说"生气"、捶垫子）。参考 P.113"教给孩子表达感受的技能"。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">13</span>
+  <div class="trigger">🧒 孩子和弟弟/妹妹争抢东西，动手打了弟弟/妹妹。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你是哥哥，怎么能打弟弟呢？你比他大！让着弟弟！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（分开两人后单独和老大说）"我看到你和弟弟都很想要那个东西。打人是不对的。我们来想想——下次弟弟抢你东西的时候，除了打他，你还可以怎么做？"</span></div>
+  <div class="principle">📖 原理：不说"你是哥哥就该让"，这会造成怨恨。关注解决方案，让孩子参与想出下次的替代行为。参考 P.110。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">14</span>
+  <div class="trigger">🧒 孩子在游乐场被另一个孩子先打了，还手打回去。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"他打你你也不能打他啊！打人就是不对！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"他先打了你，你一定又疼又生气。但打回去也解决不了问题。下次有人打你，你可以大声说'不许打我！'然后马上来找妈妈，好吗？"</span></div>
+  <div class="principle">📖 原理：不否定孩子还手的情绪逻辑，但强调"打回去不是解决办法"。教具体可操作的自我保护语言。参考 P.112。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">15</span>
+  <div class="trigger">🧒 孩子高兴的时候也会突然拍打小朋友的头。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你怎么又打人！刚才不是说了吗！你这孩子怎么回事！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（握住孩子的手）"你想和他玩所以拍了拍他对吗？但拍头会疼的。你可以轻轻地拍拍他的肩膀，像这样。我们试一下？"</span></div>
+  <div class="principle">📖 原理：理解孩子可能只是社交技能不足（不知如何表达友好），而不是"恶意的"。教正确的表达方式，比批评更有效。参考 P.113。</div>
+</div>
+
+<!-- 场景4: 说狠话 -->
+<div class="scenario-header">
+  <h3>场景 4 · 说狠话 / 骂人</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.150-153 "骂人/说脏话"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">16</span>
+  <div class="trigger">🧒 孩子生气时冲你喊"我讨厌你！你是坏妈妈！"</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你竟敢这么跟我说话！我天天照顾你，你居然说我坏？"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（平静地看着孩子）"你这么说，看来你现在真的很生气。等你冷静下来了，我们可以聊聊是什么让你这么不开心。妈妈先去厨房，你想找我的时候叫我。"</span></div>
+  <div class="principle">📖 原理：不被孩子的狠话激怒。"我讨厌你"≠他真的讨厌你，是"我太生气了不知道怎么说"的翻译。冷静撤离，保持连接通道。参考 P.150。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">17</span>
+  <div class="trigger">🧒 孩子在幼儿园学了一句脏话，回家反复说。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"不许说这个！再说打你嘴！谁教你的！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"这个词我们在家里不说。你可以说'太好笑了'来代替。来，我们试试？"（不过度反应，说完就转移话题）</span></div>
+  <div class="principle">📖 原理：最小化反应——过度反应会让孩子觉得这个词"威力很大"反而更想说。提供一个替代词，然后忽略后续尝试。参考 P.151。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">18</span>
+  <div class="trigger">🧒 孩子对爷爷奶奶说"你走开！我不要你！"</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你怎么跟奶奶说话呢！太没礼貌了！快道歉！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（把孩子带到一边）"奶奶听到你说'走开'会伤心的。如果你现在想一个人待会儿，可以说'我想自己玩一会儿'。你想现在去跟奶奶这么说，还是妈妈陪你一起去？"</span></div>
+  <div class="principle">📖 原理：不公开羞辱，而是私下教正确表达。把"你走开"翻译成可接受的表达方式"我想自己待会儿"。参考 P.152。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">19</span>
+  <div class="trigger">🧒 小朋友不跟他玩，他说"那你去死吧！"</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你说什么呢！太恶毒了！你今天别想出去玩了！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（蹲下来认真看着孩子）"这句话会让人很伤心。你是因为他不跟你玩，所以非常难过对吗？你可以说'我很伤心，我希望你能跟我玩'。来，我们练习一遍。"</span></div>
+  <div class="principle">📖 原理：孩子说狠话通常因为情绪找不到出口，词汇库里没有"我很伤心/失望/被拒绝"。帮他补上这个词汇。参考 P.153。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">20</span>
+  <div class="trigger">🧒 孩子生气地说"我不要这个家了！我要去别人家！"</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"去啊！你走啊！我看你能走到哪里去！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（冷静地）"你现在特别特别生气对吗？生气到想离开这个家。但这里永远是你的家，爸爸妈妈永远爱你。你可以去你的'冷静角'待一会儿，等你感觉好了再来找我。"</span></div>
+  <div class="principle">📖 原理：不接挑衅的球。"我要走"是求助信号，翻译成"我太生气了不知道怎么表达"。用"永远爱你"锚定安全感，用"冷静角"给出路。参考 P.48。</div>
+</div>
+
+<!-- 场景5: 情绪崩溃 -->
+<div class="scenario-header">
+  <h3>场景 5 · 撒泼打滚 / 彻底崩溃</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.45-51 "爱发脾气或好斗的孩子"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">21</span>
+  <div class="trigger">🧒 在超市不给买玩具，直接躺地上打滚大哭。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"起来！丢死人了！我叫你爸爸来收拾你！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（蹲下来，声音降低而不是提高）"我知道你非常想要那个。但我们今天不买玩具。你想让我抱着你出去，还是牵着手一起走？"（如果他继续滚，站在旁边安静等待，不劝、不怒）</span></div>
+  <div class="principle">📖 原理：降低音量、不给观众。孩子崩溃时大脑前额叶已经关闭，任何道理都进不去。保持镇静本身就是教育。参考 P.46。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">22</span>
+  <div class="trigger">🧒 洗澡时间到不肯洗，拉进浴室后哭到干呕。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"哭什么哭！洗个澡跟要你命一样！再不洗身上都臭了！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（抱着孩子）"你不想洗澡，我硬把你抱进来你一定很生气。我们先不洗，你坐在妈妈腿上哭一会儿。等你感觉好一点了，我们再决定怎么洗。"</span></div>
+  <div class="principle">📖 原理：当孩子已经崩溃到身体反应（干呕），不要再施压。暂停任务，先恢复连接。感觉好才能做得好。参考 P.47。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">23</span>
+  <div class="trigger">🧒 从游乐园回家的路上，孩子在安全座椅上崩溃大哭、踢椅子。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"别踢了！再踢就不带你出来玩了！天天出来就这德行！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你不想回家，还想继续玩，对不对？玩得那么开心突然要走了，是很难过。你哭吧，妈妈听着。等到了家，我们把你今天最好玩的事情画下来好吗？"</span></div>
+  <div class="principle">📖 原理：在安全座椅上无法进行其他干预，最好的策略就是共情+陪伴，允许孩子释放情绪。不提惩罚威胁。参考 P.49。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">24</span>
+  <div class="trigger">🧒 早上赶时间出门，孩子突然崩溃不穿鞋，说鞋不舒服。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"昨天不是穿得好好的吗！你就是不想上学找借口！快穿上！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"鞋子让你不舒服了对吗？我们现在真的快迟到了。你把鞋子穿上，到车上你可以脱掉。或者你选——现在穿这双，还是去门口穿那双拖鞋？"</span></div>
+  <div class="principle">📖 原理：时间紧时最容易爆发。区分"紧急"和"重要"——现在上学是紧急的，鞋子不舒服是重要的，但不是现在解决的。给孩子一个"妥协方案"。参考 P.47。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">25</span>
+  <div class="trigger">🧒 孩子自己发脾气之后，哭累了来找你抱。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"知道过来了？刚才让你别闹你怎么不听？知道错了没？"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（张开手臂抱住）"你感觉好点了吗？妈妈一直在等你。刚才大家都不太开心，现在我们可以重新开始。你想喝点水吗？"</span></div>
+  <div class="principle">📖 原理：孩子主动修复连接时，不要翻旧账。接纳回来，给台阶下。"重新开始"是最强大的亲子修复仪式。参考 P.51。</div>
+</div>
+
+<!-- ======== CAT 2: 习惯养成类 ======== -->
+<div class="category-header">
+  <h2>🟠 习惯养成类（5个场景 × 5个变体 = 25个脚本）</h2>
+  <div class="cat-desc">培养好习惯的核心不是唠叨和命令，而是建立日常惯例表和让孩子参与决策。</div>
+</div>
+
+<!-- 场景6: 刷牙 -->
+<div class="scenario-header">
+  <h3>场景 6 · 不肯刷牙</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》日常惯例表相关章节</div>
+</div>
+
+<div class="script-card">
+  <span class="num">26</span>
+  <div class="trigger">🧒 孩子说"我不刷牙！"在洗手间门口僵持。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"不行！必须刷！不刷牙牙齿会烂掉！快过来！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"我注意到你的牙齿上还有小细菌没被赶走哦。你是想让妈妈帮你刷，还是你自己先刷一分钟、然后妈妈帮你检查？"</span></div>
+  <div class="principle">📖 原理：有限选择 + 游戏化。把"刷牙"变成"赶走小细菌"的游戏，两个选项都是刷牙，孩子的自主感来自"选择哪个"。参考 P.145。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">27</span>
+  <div class="trigger">🧒 孩子说牙膏辣、牙刷硬、各种理由不刷。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"就你事多！别的小朋友都能刷就你不能刷！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"牙膏让你不舒服了？那周末我们去超市，你自己选一支你觉得不辣的牙膏。但今天晚上，我们还是要刷——你可以不蘸牙膏，只用牙刷刷一遍，怎么样？"</span></div>
+  <div class="principle">📖 原理：认真对待孩子的感官不适（牙膏辣可能真的是问题），同时不放弃底线（今晚还是要刷）。区分"立即解决"和"长期解决"。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">28</span>
+  <div class="trigger">🧒 刷牙时敷衍了事，10秒就说刷完了。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你这就叫刷牙啊？重新刷！不好好刷今晚不给你讲故事！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"嗯，牙齿前面的小细菌被赶走了，但后面的还没走呢。要不要妈妈帮你检查一下，看看哪里还有小细菌躲着？我们一起来个大扫除。"</span></div>
+  <div class="principle">📖 原理：不说"你刷得不够好"，说"还有任务没完成"。用游戏化语言，把检查变成合作而不是批判。参考 P.42"日常惯例表"。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">29</span>
+  <div class="trigger">🧒 孩子说"爸爸/妈妈也还没刷牙呢！"拿来当挡箭牌。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"大人跟你一样吗？大人的牙齿和小孩不一样！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"被你说中了！妈妈也还没刷呢。要不我们来比赛——你刷你的，我刷我的，看谁把小细菌赶得最干净！"</span></div>
+  <div class="principle">📖 原理：不搞双重标准。孩子对公平有天然敏感，大人以身作则比说教有力一百倍。把"监督"变成"一起做"。参考 P.44。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">30</span>
+  <div class="trigger">🧒 宝宝使劲抵抗刷牙已经养成习惯，每次必哭。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"哭也得刷！来！按住！每天都这样累不累啊！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"刷牙时间到了。我们一起来想个新办法——你想在洗澡的时候刷、还是听完故事之后刷？你想先刷上面还是先刷下面？你想用计时器还是唱完一首刷牙歌？"</span></div>
+  <div class="principle">📖 原理：打破负面惯性。对抗已经形成模式化，需要引入全新变量（时机、顺序、工具）。让孩子参与设计刷牙流程。参考 P.43"让孩子参与建立日常惯例"。</div>
+</div>
+
+<!-- 场景7: 吃饭 -->
+<div class="scenario-header">
+  <h3>场景 7 · 吃饭困难</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.88-92 "就餐时的麻烦"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">31</span>
+  <div class="trigger">🧒 孩子坐在餐桌前说"我不饿"，一口不吃。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"不行！做了这么多你必须吃！不吃一会儿饿了我可不管你！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"好，你觉得不饿。那你可以选择——坐在餐桌旁边陪我们聊聊天，或者先去玩一会儿。但下一顿饭是明天早上，中间没有零食哦。你确定吗？"</span></div>
+  <div class="principle">📖 原理：自然后果——饿了会自己来找吃的。父母负责提供健康的食物和固定的用餐时间，孩子负责决定吃多少。参考 P.89"避免权力斗争"。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">32</span>
+  <div class="trigger">🧒 孩子只吃白米饭，蔬菜肉类一律不碰。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"吃点菜！不吃菜长不高！你看谁家孩子跟你似的！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"今天餐桌上有米饭、青菜和鸡腿。你选两样放进你的盘子里。吃多少由你决定，但每样都要来一点。"</span></div>
+  <div class="principle">📖 原理：你控制"什么出现在餐桌上"，孩子控制"吃多少"。不强迫吃完，但要求"每样都尝一口"。长期坚持，不焦虑。参考 P.91。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">33</span>
+  <div class="trigger">🧒 孩子吃饭时在椅子上扭来扭去、玩食物。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你能不能好好坐着！再玩就把饭收走了！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"我看你在椅子上扭来扭去，应该是吃饱了。那我们的吃饭时间结束了。你下来吧，盘子我收了。"</span></div>
+  <div class="principle">📖 原理：不说"你再玩就不许吃了"（威胁），而是判断"你玩=你吃饱了"（自然推论）。平静收走，不补零食。下次就记住了。参考 P.90。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">34</span>
+  <div class="trigger">🧒 吃饭前半小时非要吃零食。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"不行！马上吃饭了吃什么零食！刚才让你吃你不吃！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"我知道你饿了。饭还有20分钟就好。你可以先喝点水，或者帮我把菜端到桌子上——这样饭好了你第一个吃。"</span></div>
+  <div class="principle">📖 原理：共情 + 替代方案 + 参与感。"帮妈妈端菜"让孩子有掌控感，并且他在等的是"自己参与准备"的那顿饭。参考 P.42。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">35</span>
+  <div class="trigger">🧒 孩子吃一半就说饱了，半小时后就喊饿。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"刚才让你吃完你不吃！现在知道饿了？没了！饿着吧！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"刚才你说饱了，所以我把饭收了。现在你饿了——下一顿饭是 X 点，你可以期待那顿饭。肚子饿不好受，妈妈知道，下次吃饭的时候你可能会多吃一点。"</span></div>
+  <div class="principle">📖 原理：自然后果的最佳示例——饿了→因为刚才没吃够→下次自然会多吃。不嘲讽、不补餐，但要共情（"肚子饿不好受，妈妈知道"）。参考 P.90。</div>
+</div>
+
+<!-- 场景8: 收玩具 -->
+<div class="scenario-header">
+  <h3>场景 8 · 不肯收玩具</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.190-193 "不肯收拾"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">36</span>
+  <div class="trigger">🧒 玩具摊了一地，叫了三次不收。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"我说了几遍了！赶紧收！不收我给扔垃圾桶了！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"游戏时间结束了。接下来你想做什么？我们先把玩具送回家，然后就可以看书了。你想先收积木还是先收小车？"</span></div>
+  <div class="principle">📖 原理：把收玩具和下一个有趣的活动连接（"收完就可以看书"），而不是作为惩罚前奏。有限选择降低对抗。参考 P.191。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">37</span>
+  <div class="trigger">🧒 孩子说"太多了我收不完！"</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"谁让你拿出来这么多的！自己拿的自己收！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"确实好多啊！那我们来分工——你收红色的积木，妈妈收蓝色的。来，看谁先收完？"</span></div>
+  <div class="principle">📖 原理：孩子说"收不完"可能真的是觉得无从下手。不否定他的感觉，而是帮他拆解任务。合作比命令更容易让孩子行动。参考 P.192。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">38</span>
+  <div class="trigger">🧒 提醒收玩具，孩子说"等一下！"一次次拖。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"每次都等一下等一下！你就没有一次是立刻收的！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你说等一下——那我定个 3 分钟的计时器。计时器一响，就是我们收玩具的时间。是你来按开始，还是妈妈来按？"</span></div>
+  <div class="principle">📖 原理：用计时器做"中立裁判"，而不是父母当"人形闹钟"。给孩子一个可以量化的缓冲时间，计时器响=行动信号，不针对任何人。参考 P.191。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">39</span>
+  <div class="trigger">🧒 收了两个玩具就说"我累了，不收了"。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"就收了两个你说累？这地上还有一大堆呢！不行，继续收！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你收了两个！不错。你看地上还剩大概这么多（比划），你再收三个，剩下的妈妈帮你。你觉得哪三个最容易收？"</span></div>
+  <div class="principle">📖 原理：认可已完成的（"你收了两个"）→明确小目标（"再收三个"）→给援助。不说"你才收了两个"，说"你已经收了两个"。参考 P.193。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">40</span>
+  <div class="trigger">🧒 孩子把玩具扔得到处都是，不是"玩"是"倒"。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你怎么又把箱子倒了！给你说过多少遍不许倒箱子！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"哇，全倒出来了！你知道下一件事是什么吗？是你负责把这些全收回去。需要妈妈帮忙的话，告诉我就行。"</span></div>
+  <div class="principle">📖 原理：不提前禁止（倒了就倒了），让孩子体验"倒出来很爽，收回去很累"的自然后果。平静告知后果，不骂不救。参考 P.42。</div>
+</div>
+
+<!-- 场景9: 睡觉 -->
+<div class="scenario-header">
+  <h3>场景 9 · 不肯睡觉</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.194-197 "就寝时的麻烦"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">41</span>
+  <div class="trigger">🧒 到了睡觉时间说"我不困！我还要玩！"</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"都几点了还不困！明天起不来别怪我！赶紧上床！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"我知道你还想玩。我们来检查一下睡觉前的惯例表——先刷牙，再换睡衣，然后读两本书，然后关灯。你想先做哪一项？"</span></div>
+  <div class="principle">📖 原理：惯例表代替命令。"惯例表说该刷牙了"比"妈妈说该刷牙了"更客观、更少对抗。让孩子参与制作这张表，并贴在墙上。参考 P.195。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">42</span>
+  <div class="trigger">🧒 读完故事还要再读一本，读完又再要一本。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"说好的两本！你怎么说话不算数！不行！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"今天的读书时间结束了。你很喜欢这个故事对不对？明天晚上我们可以第一本就讲这个。现在——你是自己关灯，还是妈妈帮你关？"</span></div>
+  <div class="principle">📖 原理：坚守事先约定的边界，同时给孩子一个明天的期待。保持语调温和而非指责。不说"你说话不算数"，说"今天的结束了"。参考 P.196。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">43</span>
+  <div class="trigger">🧒 关灯后反复跑出来，一会儿喝水一会儿尿尿。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你到底睡不睡！都跑出来第五次了！再不睡觉我要生气了！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（第一次出来满足需求；第二次平静地带回去）"尿尿好了对吧？现在回到床上。晚安，明天早上见。"（不需要多说，不需要生气，但每次都要带回去）</span></div>
+  <div class="principle">📖 原理：满足合理需求，但不给额外的注意力回报。如果他发现"每次出来妈妈都会陪我聊天"，他就会持续出来。带回去时温和但简短。参考 P.197。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">44</span>
+  <div class="trigger">🧒 害怕一个人睡，说"有怪物"。  </div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"哪有什么怪物！你都多大了还怕这个！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你觉得房间里有怪物，所以害怕了对吗？我们来检查一下——你指给我看，怪物可能藏在哪里？"（一起检查衣柜、床底）"你看，没有。但如果你还是怕，这个手电筒给你，你可以随时打开看看。"</span></div>
+  <div class="principle">📖 原理：不要说"哪有什么怪物"——恐惧是真实的感受。一起检查+提供安全感工具（手电筒）。认真对待，不敷衍。参考 P.52。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">45</span>
+  <div class="trigger">🧒 睡前兴奋过度，在床上蹦跳，不肯躺下。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"不许蹦了！要摔下来了！躺下！一！二！三！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你的身体还想蹦，但现在是安静时间。我们换一个安静的游戏——闭着眼睛听我的声音，猜猜我在用什么声音碰你？（用手指轻轻划背/手指画圈）"</span></div>
+  <div class="principle">📖 原理：用感觉输入的切换帮孩子从"兴奋模式"切换到"放松模式"。轻轻碰触+闭眼→触觉和听觉接管，身体自然安静下来。参考 P.196。</div>
+</div>
+
+<!-- 场景10: 看屏幕 -->
+<div class="scenario-header">
+  <h3>场景 10 · 看屏幕 / 手机 / 平板</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.84-87 "电子产品/屏幕时间"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">46</span>
+  <div class="trigger">🧒 看电视时间到了不肯关，抱着遥控器不撒手。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"说了多少次了时间到了！你什么时候能自觉一点！"（一把抢过遥控器关掉）</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"我们的约定是看20分钟，计时器响了对吗？还有两分钟就关了，你可以看完这段。是你关了它，还是我帮你？"（提前两分钟预告，最后一分钟再提醒一次）</span></div>
+  <div class="principle">📖 原理：提前预告减少突然中断带来的情绪反弹。把"规则"归到"我们的约定"而非"妈妈的规定"。参考 P.85。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">47</span>
+  <div class="trigger">🧒 早上起床第一句话是"我要看手机"。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"一天到晚就知道看手机！不行！早上不许看！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"我知道你想看手机。但屏幕时间是在晚饭后。现在我们可以做别的——你想看绘本，还是出去阳台看看花开了没有？"</span></div>
+  <div class="principle">📖 原理：明确时间边界（屏幕时间是什么时候）+ 提供更吸引人的替代活动。不要让"不给手机"变成"什么都没得做"。参考 P.86。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">48</span>
+  <div class="trigger">🧒 爸妈看手机时孩子大喊"你们也在看！"</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"大人看手机是工作！你看手机是玩！不一样！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"被你说中了。妈妈用手机在工作，但你说得对，我们也要少看屏幕。现在妈妈把手机放进抽屉，我们一起玩15分钟好吗？"</span></div>
+  <div class="principle">📖 原理：不搞双重标准。孩子对公平极度敏感，大人的以身作则是屏幕管理的基石。承认孩子的观察，做出改变。参考 P.87。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">49</span>
+  <div class="trigger">🧒 在餐厅等餐时吵闹要手机看动画片。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你安静一点！给你给你！别吵了！"（掏出手机妥协）</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"等餐的时候确实有点无聊。我们出门之前忘了带'等餐小包'了。现在我们可以玩——'我在餐厅里看到了一个红色的东西，你猜是什么'的游戏。或者你拿笔画画？"</span></div>
+  <div class="principle">📖 原理：提前准备"等餐神器"（小画本、贴纸书、猜谜游戏），避免每次都靠手机。如果忘了，现场创造小游戏。参考 P.86"做有准备的父母"。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">50</span>
+  <div class="trigger">🧒 关了屏幕之后一直嘟囔"还想看，还想看"。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"没了就是没了！你再说一遍试试！你除了看动画片还会干嘛！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"我知道你还想看。那个动画片确实很好看。下次屏幕时间是什么时候？我们把它记在日历上。现在，我们做点别的事，你想选什么？"</span></div>
+  <div class="principle">📖 原理：共情 + 明确下次时间 + 转移注意。孩子的"还想看"本质上是对下次没有安全感的焦虑。明确告诉他"下次什么时候可以看"，焦虑就降下来了。参考 P.87。</div>
+</div>
+
+<!-- ======== CAT 3: 社交场景类 ======== -->
+<div class="category-header">
+  <h2>🟡 社交场景类（5个场景 × 5个变体 = 25个脚本）</h2>
+  <div class="cat-desc">社交能力不是"讲道理"讲出来的，是在真实的社交冲突中，父母一边陪伴一边引导练出来的。</div>
+</div>
+
+<!-- 场景11: 不愿分享 -->
+<div class="scenario-header">
+  <h3>场景 11 · 不愿分享</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.96-98 "不愿分享"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">51</span>
+  <div class="trigger">🧒 小朋友来家里玩，孩子把所有玩具都抱在怀里说"都是我的！"</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你怎么这么小气！给弟弟玩一下怎么了？要学会分享！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（对小朋友说）"这些玩具是XX的宝贝，他现在还不想分享。等他准备好了，会来找你的。"（然后对孩子说）"你有权利不让别人碰你的玩具。如果你想分享某一个了，就告诉我。"</span></div>
+  <div class="principle">📖 原理：尊重物主权。强迫分享只会让孩子更护东西。先给孩子安全感（"你的东西你做主"），分享才会自然发生。参考 P.97。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">52</span>
+  <div class="trigger">🧒 孩子抢了别人的玩具，说"我想要！"</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"还给人家！你怎么抢别人东西！太没礼貌了！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你很喜欢这个玩具。但它是XX的。我们要还给他。你可以问他——'我可以玩一下吗？'或者我们拿一个你的玩具跟他换着玩。你想试哪一种？"</span></div>
+  <div class="principle">📖 原理：教社交技能而不是骂。"抢"说明孩子不知道如何正确获取。提供两个可行方案，教的是方法。参考 P.98。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">53</span>
+  <div class="trigger">🧒 孩子不肯分享零食，说"这是我的！我妈妈给我买的！"</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"就分一块怎么了？你怎么这么独？大家一起吃才好吃！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"这些零食是你自己留着的。如果有一天你愿意分享一颗给小朋友，我相信他会很开心。没关系的，分享不着急。"</span></div>
+  <div class="principle">📖 原理：不贴"小气"标签。分享是基于安全感的溢出，不是基于道德绑架的割让。越不逼，越容易分享。参考 P.97。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">54</span>
+  <div class="trigger">🧒 一起去公园玩沙，带了工具但不让别的小朋友碰。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"这么多铲子你也用不完！给人家一个！你怎么这么霸道！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"这些都是你的工具，你来决定。小朋友很想玩沙子但没有铲子，你看你手里这些——有没有一个你现在不用的，可以借给他玩一会儿？"</span></div>
+  <div class="principle">📖 原理：让孩子做决定而不是命令。"你来决定"激发掌控感和慷慨。即使他不借，也尊重他的决定。分享是选择，不是义务。参考 P.98。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">55</span>
+  <div class="trigger">🧒 孩子上幼儿园后总说"谁谁谁不跟我分享"。  </div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"那你别跟他玩了呗！或者你告诉老师去！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"他不跟你分享，你一定很难过。每个人都有不想分享的时候，就像你有时候也不愿意给别人。下次你可以试试问——'我可以等你玩完了再玩吗？'"</span></div>
+  <div class="principle">📖 原理：借力打力——用孩子自己被分享要求时的感受来理解别人。教具体话术（"等你玩完可以给我吗"），而不是逃避或告状。参考 P.98。</div>
+</div>
+
+<!-- 场景12: 被欺负 -->
+<div class="scenario-header">
+  <h3>场景 12 · 被欺负 / 被抢被推</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.110-113 "打架/咬人"、P.226-229 "恃强凌弱"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">56</span>
+  <div class="trigger">🧒 孩子在游乐场被大孩子推倒了，哭着找妈妈。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你怎么这么窝囊！他推你你不会推回去啊！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（抱着孩子）"被推倒了，又疼又委屈吧。妈妈看到了。下次你可以大声说——'不许推我！'然后马上来找妈妈。我们现在要不要过去，告诉他你不喜欢被推？妈妈陪你去。"</span></div>
+  <div class="principle">📖 原理：先安抚情绪，再教技能。不鼓励以暴制暴（会升级冲突），教清晰的语言表达和寻求帮助。让孩子决定是否去沟通。参考 P.227。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">57</span>
+  <div class="trigger">🧒 孩子回来说幼儿园有小朋友打他。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"谁打的？我明天去找他！你怎么不告诉老师啊！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"有人打你，你一定很害怕又很生气。你当时做了什么？有没有告诉老师？我们一起来想——下次如果有人打你，你可以怎么做？"（和孩子一起列出几个方案）</span></div>
+  <div class="principle">📖 原理：先处理情绪再处理事情。让孩子参与想方案（大声说"不"、走开、告诉老师），锻炼他的问题解决能力，而不是替你出面。参考 P.228。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">58</span>
+  <div class="trigger">🧒 孩子在学校总被同一个孩子抢东西。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你怎么老被抢啊？你就不会拿紧一点！你怎么这么没用！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"那个小朋友总是拿你的东西，一定让你很不舒服。我们在家练习一下——把手放在你的玩具上，看着他，用最大的声音说'这是我先拿到的，请你等一下！'"</span></div>
+  <div class="principle">📖 原理：角色扮演练习——对幼儿来说，没有练习过的反应是不可能在真实场景中做出来的。在家练到熟练，才有底气出门用。参考 P.229。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">59</span>
+  <div class="trigger">🧒 孩子在玩滑梯，被后面小孩推搡催促。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"（赶紧把孩子抱走）走吧我们别玩了，人太多了。"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（不打乱孩子的节奏）"如果他推你，你可以说——'请不要推我，我会滑下去的。'妈妈就在这儿。你想自己说，还是妈妈帮你说？"</span></div>
+  <div class="principle">📖 原理：不替孩子逃避社交冲突，做他的"安全基地"。给他话术+选择权（自己说或妈妈说），逐渐培养他独立应对的能力。参考 P.227。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">60</span>
+  <div class="trigger">🧒 孩子因为被抢玩具哭了，说"我再也不要跟他玩了"。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"对，别跟他玩了，他那样的不是好孩子！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你决定暂时不跟他玩了，这是你的选择。等你感觉好了，如果想继续跟他玩，也可以。我们再想想，下次一起玩的时候，你可以先把最宝贝的玩具收起来。"</span></div>
+  <div class="principle">📖 原理：尊重孩子的决定，但不替孩子给另一个孩子贴上"坏孩子"标签。同时帮孩子提前做准备（收好最爱的玩具），降低未来的冲突概率。参考 P.228。</div>
+</div>
+
+<!-- 场景13: 插话/打断 -->
+<div class="scenario-header">
+  <h3>场景 13 · 打断大人说话 / 插话</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.66-69 "打断"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">61</span>
+  <div class="trigger">🧒 妈妈在打电话，孩子不停扯衣角"妈妈妈妈妈妈"。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"（用手捂住话筒）你能不能安静一下！没看见妈妈在打电话吗！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（打电话前先跟孩子说）"妈妈现在要打一个电话，大约5分钟。我把计时器放在这里。计时器响之前，请你当'等待小勇士'。如果中间有很紧急的事，你可以轻轻拍拍我的手。准备好了吗？"</span></div>
+  <div class="principle">📖 原理：提前约定 + 具体预期（几分钟）+ 让孩子有控制感（紧急情况的暗号）。教孩子"等待"而不是命令他"不许说话"。参考 P.67。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">62</span>
+  <div class="trigger">🧒 大人聊天时，孩子大声说话打断"听我说听我说！"</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"大人说话小孩别插嘴！有没有礼貌！等下再说！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（用手轻轻放在孩子肩膀上说）"我听到你想说，等我讲完这句话就轮到你。你先想好你要说的，马上就是你的时间了。"（然后一定要兑现）</span></div>
+  <div class="principle">📖 原理：教轮流说话的基本社交规则。用手的触碰代替语言制止（不增加声音）。"马上就是你的时间"，并且说到做到。参考 P.68。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">63</span>
+  <div class="trigger">🧒 在家长会上，孩子动不动就跑过来找妈妈说事情。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你能不能去跟小朋友玩！妈妈开会呢你不要老是过来！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"接下来20分钟妈妈需要专心开会。我帮你准备了这几样东西（纸、笔、贴纸），你可以在这边画画或贴纸。结束之后我陪你玩10分钟你选的游戏。"</span></div>
+  <div class="principle">📖 原理：提前准备替代活动 + 承诺结束后的专属时间。大多数孩子"打断"是怕被遗忘，给他"20分钟后有专属时间"的确定感，他就不会反复来确认了。参考 P.69。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">64</span>
+  <div class="trigger">🧒 两个孩子同时争着说话，谁也不让谁。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"别吵了！一个一个来！你！先说！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"哇，你们俩都有很重要的事情要说！我们来掷硬币——字面的人先说，花面的第二说。第二个人可以来当'计时员'，帮妈妈计时。"</span></div>
+  <div class="principle">📖 原理：把公平性问题外包给随机机制（硬币），避免"妈妈偏心"的指控。让等待的人也得到一个角色（计时员），等待本身就有了参与感。参考 P.68。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">65</span>
+  <div class="trigger">🧒 孩子一见到妈妈就开始无休止地说幼儿园的事，妈妈正在做饭。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"等会儿再说！妈妈现在忙！你先自己去玩！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"我听出来你今天在幼儿园有好多事情想讲！妈妈正在炒菜，你能不能在厨房门口讲给我听？等饭吃完我们再好好聊——我保证第一个问你今天最开心的事。"</span></div>
+  <div class="principle">📖 原理：不把孩子的分享欲推开。用"边做边听"替代"现在别烦我"，并给出一个确定的"专属分享时间"的承诺。参考 P.67。</div>
+</div>
+
+<!-- 场景14: 害羞 -->
+<div class="scenario-header">
+  <h3>场景 14 · 害羞 / 不敢说话</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.118-121 "害羞"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">66</span>
+  <div class="trigger">🧒 见到不熟的亲戚，孩子躲在妈妈腿后面不说话。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"快叫阿姨啊！怎么这么没礼貌！在家不是挺能说的吗？"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（不推孩子出来）"他还在观察，需要一点时间。等他准备好了，会过来打招呼的。"（然后对孩子）"这是张阿姨，等你准备好了可以跟阿姨说'你好'。不想说也没关系，可以挥挥手。"</span></div>
+  <div class="principle">📖 原理：不给孩子贴"害羞/没礼貌"的标签。给孩子提供一个"低配版社交"选项（挥手），降低压力。把时间线交给孩子。参考 P.119。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">67</span>
+  <div class="trigger">🧒 在小区里看到别的小朋友想一起玩，但不敢开口。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"想玩就去啊！怕什么！人家又不会吃了你！去！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你想过去跟他们一起玩，但有点不敢对不对？妈妈陪你走过去，你可以先说——'我可以加入吗？'或者我们就站在旁边看一会儿，你准备好了再过去。"</span></div>
+  <div class="principle">📖 原理：做"脚手架"而不是推手。帮他翻译动机（"你想玩但不敢"），提供话术，陪到门口但不替他说。参考 P.120。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">68</span>
+  <div class="trigger">🧒 在舞台上表演时站着不动，一句话不说。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你怎么回事！在家练得那么好！你倒是说啊！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（下台后抱着）"站在那么多人前面，一定很紧张吧。妈妈小时候上台也紧张得说不出话。你站在台上已经很勇敢了。你想再来一次，还是下次再试试？"</span></div>
+  <div class="principle">📖 原理：不批评表现，认可勇气本身（"站在那里已经很勇敢了"）。分享自己类似的经历，消除"只有我这么差"的羞耻感。参考 P.121。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">69</span>
+  <div class="trigger">🧒 在课堂上知道答案也不举手回答。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你知道怎么不举手呢？你不举手老师怎么知道你学会了？下次必须举手！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你知道答案，但不想举手。是因为怕说错吗？没关系，不是每次都要举手。等你觉得舒服了想试了，就举。你想我们在家先练习一下吗？你当老师，提问妈妈。"</span></div>
+  <div class="principle">📖 原理：不强迫，探索原因（怕说错？不确定？）。用角色互换游戏（你当老师）来降低"被提问"的压力。参考 P.120。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">70</span>
+  <div class="trigger">🧒 参加生日派对，一直黏在妈妈身边不跟其他孩子互动。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你老黏着我干嘛！去跟小朋友玩啊！你看人家玩得多开心！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"这里人好多，你还需要一点时间适应。妈妈陪你在这儿坐5分钟。然后我们一起找一个你感兴趣的东西——你看那边在吹气球，你想过去看看吗？妈妈跟你一起去。"</span></div>
+  <div class="principle">📖 原理：适应需要梯度。第一步：妈妈陪着观察；第二步：一起走近感兴趣的东西；第三步：妈妈慢慢退后。用"梯子"而不是"推下去"。参考 P.119。</div>
+</div>
+
+<!-- 场景15: 不配合集体活动 -->
+<div class="scenario-header">
+  <h3>场景 15 · 不配合集体活动 / 规则意识弱</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.73-76 "不听话/不遵守规则"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">71</span>
+  <div class="trigger">🧒 老师说坐好，孩子偏要站起来；老师说排队，他跑开。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你怎么这么不听话！老师说多少次了！你耳朵是干什么用的！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你喜欢动来动去的感觉，但老师说'坐好'的时候大家都坐着。我们来玩个游戏——我说'木头人！'你就要定住不动，看你能定多久！"</span></div>
+  <div class="principle">📖 原理：多动的孩子需要把"听从指令"变成游戏而不是命令。在家用游戏练习，慢慢迁移到集体环境。参考 P.74。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">72</span>
+  <div class="trigger">🧒 玩游戏输了就掀桌子/哭喊。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"玩不起就别玩！输不起像什么样子！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"输了让人很不舒服，完全不想输对不对？妈妈小时候也最讨厌输了。但游戏的规则就是有人赢有人输——下次我们再玩的时候，你想规定一个'输了可以做的事'吗？比如输了可以选一个小贴纸？"</span></div>
+  <div class="principle">📖 原理：共情 + 给输一个"补偿仪式"。对低龄孩子来说，输的挫败感是真实的，"输了也可以有小确幸"比讲"输赢不重要"的大道理管用。参考 P.75。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">73</span>
+  <div class="trigger">🧒 做早操时自己乱跑，不跟着做动作。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你在干什么！看看别的小朋友！跟着做！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你在用自己的方式做操对吗？很有趣！但是我们的'班级约定'是做操时要跟着老师做。你想站在第二排——这样你能看到所有小朋友的动作，怎么样？"</span></div>
+  <div class="principle">📖 原理：先认可他"用自己的方式做操"不是故意捣乱，可能是手脚不听使唤。再用"班级约定"这个客观规则，并给一个位置调整的策略。参考 P.74。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">74</span>
+  <div class="trigger">🧒 在图书馆/博物馆大声说话、跑动。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你小声点！这是图书馆！你怎么在哪都疯跑！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（把孩子拉到一边蹲下）"你看这里所有的人——他们说话的声音都很小。这里是'小声说话的地方'。如果你现在特别想跑，妈妈陪你去外面跑两圈再回来。"</span></div>
+  <div class="principle">📖 原理：把孩子带到旁边说（保全自尊），引导观察环境线索（别人都小声），提供满足需求的选择（出去跑再回来）。不是"不许跑"，是"在这里不能跑，去那边可以"。参考 P.76。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">75</span>
+  <div class="trigger">🧒 坐安全座椅/系安全带时死活不肯系。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"不系安全带会死的你知道吗！别动！老实坐着！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"安全带是车开之前必须系好的。你想自己系上这个扣，还是妈妈帮你系？系好了我们就可以出发去玩了。如果你不系，车就不能开。"</span></div>
+  <div class="principle">📖 原理：安全问题不谈判，但给有限的执行方式选择。用"系好了就能出发"（正向）代替"不系就会死"（恐吓）。不说教，说事实。参考 P.73。</div>
+</div>
+
+<!-- ======== CAT 4: 权力斗争类 ======== -->
+<div class="category-header">
+  <h2>🟢 权力斗争类（5个场景 × 5个变体 = 25个脚本）</h2>
+  <div class="cat-desc">权力斗争的本质是孩子在说"我需要掌控感"。与其争夺控制权，不如给孩子"在框架内的选择权"。</div>
+</div>
+
+<!-- 场景16: 顶嘴/说不 -->
+<div class="scenario-header">
+  <h3>场景 16 · 顶嘴 / 说"不"</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.63-65 "不！"、P.70-72 "顶嘴"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">76</span>
+  <div class="trigger">🧒 你让他做任何事，他都说"不！我不要！"</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你怎么什么都说不要！我说什么你都不要是不是！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（不说"你要不要……"，直接给A或B）"现在洗澡时间到了。你想带着黄色小鸭子还是蓝色小鲸鱼进去？"</span></div>
+  <div class="principle">📖 原理：不说"要不要洗脸？"——这是在邀请说"不"。改成"洗脸时间到了，你想用冷水还是温水？"把"做不做"的选择，替换成"怎么做"的选择。参考 P.64。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">77</span>
+  <div class="trigger">🧒 孩子说"我就不刷牙！你能把我怎么样！"</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你试试看！看我怎么收拾你！今晚别想听故事了！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（完全不被激怒，平静地说）"我知道你不想刷。我们之前在惯例表上写的，睡前最后一件事是刷牙。你看看表——现在该刷牙了。我在洗手间等你，你想带哪个玩具陪你刷？"</span></div>
+  <div class="principle">📖 原理：不接挑衅的球。把注意力引回客观规则（惯例表），不给情绪对抗提供燃料。用"我在等你"代替"你给我过来"。参考 P.65。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">78</span>
+  <div class="trigger">🧒 孩子说"为什么什么都要听你的！不公平！"</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"因为我是你妈！这个家我说了算！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你觉得不公平，因为所有事都是大人决定的。你说得有一部分道理。你觉得哪件事你可以自己做主？我们列一个'自主清单'——在这些事情上，你说了算。"</span></div>
+  <div class="principle">📖 原理：孩子说"不公平"不一定是挑战权威，可能是渴望自主权。把对抗变成合作："哪些事你能做主？"划定一个他能控制的区域。参考 P.71。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">79</span>
+  <div class="trigger">🧒 你批评了他一句，他翻白眼说"哼，随便！"</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你什么态度！你再翻个白眼试试！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（不接招）"我听到你说'随便'了。等你准备好好好说话的时候，我在这儿。"（转身做自己的事，不追着教育）</span></div>
+  <div class="principle">📖 原理："随便"和翻白眼是典型的权力试探——孩子在说"你不能控制我的情绪表达"。不追逐、不惩罚，保持连接的大门开着，但不接受不尊重的态度。参考 P.72。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">80</span>
+  <div class="trigger">🧒 大人说"不要碰那个"，孩子盯着大人眼睛，故意碰。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"我说了不许碰！你是不是故意的！你当我的话是耳旁风吗！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（不重复"不许碰"，直接行动）握住孩子的手或者把东西移走。"这个不是玩具。我们去那边看看有什么可以玩的。"</span></div>
+  <div class="principle">📖 原理：孩子盯着你碰东西，是在测试"规则到底有多真"。不说第三次，用行动代替语言。"说"越多→话语贬值；"做"一次→规则确立。参考 P.64。</div>
+</div>
+
+<!-- 场景17: 故意做错/拖延 -->
+<div class="scenario-header">
+  <h3>场景 17 · 故意做错 / 拖延</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.206-208 "拖延"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">81</span>
+  <div class="trigger">🧒 让他穿鞋子出门，他已经拖延了15分钟。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你到底要拖到什么时候！我数十下，一！二！三！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"我们9点要出门。现在8点45。还剩15分钟。你是现在穿，还是等这个计时器响的时候穿？计时器响了如果你还没穿好，我会帮你穿上然后我们就走。"</span></div>
+  <div class="principle">📖 原理：明确时间边界+"我会做什么"而不是"你要做什么"。"我会帮你穿上"不带惩罚意味，就是陈述接下来会发生的事。参考 P.207。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">82</span>
+  <div class="trigger">🧒 让他自己穿衣，他故意把裤子穿反、纽扣全错。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你穿的是什么啊！你是故意的吧！脱了重穿！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你自己把衣服穿好了，裤子也在身上了！很不错。你觉得裤子的标签在前面舒服还是在后面舒服？想不想把它转过来？"</span></div>
+  <div class="principle">📖 原理：不猜测动机（"你是故意的"），聚焦在"他做到了什么"（自己穿上了）。用启发式提问引导他注意细节，而不是命令重做。参考 P.208。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">83</span>
+  <div class="trigger">🧒 吃饭时说"我不饿"，上餐桌后又说要吃但只吃一口。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你说你吃！现在又不吃了？以后你说了我也不信！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你吃了一口觉得够了。好的，你可以下去了。下一次吃饭是 X 点。中间饿了的话，水果在桌上，你可以自己拿。"</span></div>
+  <div class="principle">📖 原理：不在"你吃还是不吃"上博弈。就让他下桌，并告知下一次的饭点和可自取的健康零食。把精力用在"管理环境"而不是"管理孩子"。参考 P.89。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">84</span>
+  <div class="trigger">🧒 让他帮忙拿个东西，他故意拿错的，笑嘻嘻看着你。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"我叫你拿筷子！你拿勺子干什么！你听不懂人话吗！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（不生气，笑着说）"你拿到了勺子！很棒。但我们的目标任务是筷子——你能帮我把筷子也拿来吗？如果一次拿齐勺子和筷子，你就是超级小帮手了！"</span></div>
+  <div class="principle">📖 原理：孩子故意做错是在玩"我能影响你情绪"的游戏。不按他预期的剧本走——不生气，反而认可已有的行动，再指向真正目标。打乱他的剧本就是赢了。参考 P.207。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">85</span>
+  <div class="trigger">🧒 写作业/画画时故意拖拖拉拉，一会儿喝水一会儿拉屎。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你事怎么这么多！你就是为了逃避！赶紧的！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"看起来你在努力不想做这件事。我们来把它变得好玩一点——你用这支蜡笔，我用这支。我画一朵花，你画一棵树。看我们俩加起来能画多少！"</span></div>
+  <div class="principle">📖 原理：拖延=任务太难或太无聊。不追问动机，直接降低任务门槛（一起做）+增加趣味性（比赛/合作）。让孩子从"被逼"切换到"在玩"。参考 P.208。</div>
+</div>
+
+<!-- 场景18: 超市哭闹要东西 -->
+<div class="scenario-header">
+  <h3>场景 18 · 购物哭闹要东西</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.213 "带孩子购物"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">86</span>
+  <div class="trigger">🧒 在超市非要买那个又贵又不健康的玩具/零食。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"不行！这个太贵了/太不健康了！放下！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（去超市前先做）"我们今天去超市，你有10块钱的'自主预算'。你可以买任何不超过10块钱的东西。到了超市，你来选，妈妈帮你算。"</span></div>
+  <div class="principle">📖 原理：提前给预算和自主权。他整个超市之旅都在"做选择"和"算钱"，而不是"不停地被拒绝"。参考 P.145"有限选择"。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">87</span>
+  <div class="trigger">🧒 已经到了收银台，突然想要收银台旁边的糖果。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"不行！都快结账了！你怎么每次都这样！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"我知道那个糖果看起来很诱人。我们的购物清单上没有它，你的预算也已经用完了。如果你喜欢，回家后我们可以把它加到你的'下次购物清单'上。"</span></div>
+  <div class="principle">📖 原理：不攻击孩子（"每次都这样"），把规则归到客观事实（清单和预算）。"下次购物清单"是一个延迟满足的具体工具。参考 P.213。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">88</span>
+  <div class="trigger">🧒 在超市因为没给买，躺地上大哭，大家都在看。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"快起来！你不要脸我还要脸呢！这么多人看着呢！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">（蹲下来）"我知道你现在特别特别想要。但我的答案是不买。你想我抱你出去，还是自己站起来走出去？"（等待。如果继续躺，就安静地站在旁边不催促）</span></div>
+  <div class="principle">📖 原理：不因他人的目光而妥协。你越怕丢脸，孩子越知道"在人多的地方闹有奇效"。保持镇静，有限选择。周围人怎么看是他们的事。参考 P.46。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">89</span>
+  <div class="trigger">🧒 在超市推车里乱扔东西进去、乱拿货架商品。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"别拿了！放回去！你到底能不能老实坐一会儿！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你的手很想帮忙！来，妈妈给你一个小任务——把购物清单上的这个东西找出来。它在这个过道里。你是我们的'采购侦探'！找到了就放到车里。"</span></div>
+  <div class="principle">📖 原理：好动的孩子在超市里"乱拿"是因为无事可做。把他"破坏性"的行为转成"建设性"的任务。一个忙碌的孩子是没有时间捣乱的。参考 P.213。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">90</span>
+  <div class="trigger">🧒 出门前约好不买玩具，到了又反悔哭闹。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你在家答应得好好的！现在就变卦！以后不带你来了！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"我知道你看到它们又想要了。我们在家约好的：这次只买食物，不买玩具。我们的约定还在。下次我们再定一个可以买玩具的购物日，好吗？"</span></div>
+  <div class="principle">📖 原理：共情+重申约定+下一次的希望。不说"你说话不算数"，说"我们的约定还在"。把对峙变成"我们一起遵守我们的约定"。参考 P.213。</div>
+</div>
+
+<!-- 场景19: 出门磨蹭 -->
+<div class="scenario-header">
+  <h3>场景 19 · 出门磨蹭 / 迟到</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.206-208 "拖延"、P.42-44 "日常惯例表"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">91</span>
+  <div class="trigger">🧒 早上出门前，衣服穿了20分钟还没好。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"快点快点快点！每天都这么慢！要迟到了！我真的受够了！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"我们现在进入'出门冲刺模式'。还有三个任务：穿鞋、拿书包、上车。你选一个先做，剩下两个妈妈帮你。开始！"</span></div>
+  <div class="principle">📖 原理：不说"快点"，说"我们"和具体的任务清单。把焦虑的催促变成战斗口号。"冲刺模式"有趣味性，三选一给孩子掌控感。参考 P.42。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">92</span>
+  <div class="trigger">🧒 已经要迟到了，孩子还在地上玩积木不愿动。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"别玩了！迟到了！每次出门都这样！积木回来再玩！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你的积木搭得好棒！我们可以让这些积木在这里'等你回来'。现在——你当飞机，飞到门口穿鞋。出发！"（边说边牵起孩子的手）</span></div>
+  <div class="principle">📖 原理：认可孩子的沉浸感（"搭得好棒"），不否定他的专注。创造一个"物品在原地等他"的安全感，然后用游戏化方式过渡（"你当飞机"）。参考 P.207。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">93</span>
+  <div class="trigger">🧒 每次出门前都忘了带某样东西，上了车才说。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你怎么又忘了！刚才问你你说都带齐了！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你忘了带XX，一定很想要它。但现在我们不能回去取了。我们回家之后第一件事就是把它放在门口——明天出门就能看到。我们一起做一个'出门检查歌'好吗？"</span></div>
+  <div class="principle">📖 原理：不翻旧账，不回去取（让孩子体验自然后果的不便）。重点放在"下次怎么做"——建立一个出门检查的小仪式。参考 P.208。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">94</span>
+  <div class="trigger">🧒 让他收拾书包准备出门，一边收一边玩。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你能不能快点！一个书包收半小时！我不管了你自己收吧！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"我们来倒计时挑战！我设一个5分钟的计时器。计时器响的时候，书包要拉好拉链放在门口。你觉得你行不行？预备，开始！"</span></div>
+  <div class="principle">📖 原理：把催促变成游戏。计时器是关键工具——它中立、可量化、给孩子目标感。"你觉得你行不行"是挑战邀请，而不是命令。参考 P.42。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">95</span>
+  <div class="trigger">🧒 孩子说"我不想出门！外面不好玩！"</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"不行！必须去！我都约好了！不去人家怎么说！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你觉得外面没什么好玩的。但我猜外面有些你不知道的东西——我们今天的目的地有一个很大的（滑梯/沙坑/喷泉）。你想带一个你最喜欢的小玩具陪你去吗？它当你的'探险队员'。"</span></div>
+  <div class="principle">📖 原理：不用"必须去"压人。描述目的地的吸引力，让孩子把好奇放在"不知道的东西"上，把出门变成探索而不是被迫行动。带一个玩具作为"伙伴"。参考 P.206。</div>
+</div>
+
+<!-- 场景20: 受挫发脾气 -->
+<div class="scenario-header">
+  <h3>场景 20 · 受挫 / 做事不顺发脾气</h3>
+  <div class="sc-desc">参考《正面管教 A-Z》P.130-133 "完美主义/害怕犯错"</div>
+</div>
+
+<div class="script-card">
+  <span class="num">96</span>
+  <div class="trigger">🧒 画画时画错了一笔，把整张纸撕了。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你撕它干嘛！画错了再画一张不就行了！有什么好生气的！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你画了那么久，一笔不满意就撕掉了一定很心疼吧。撕掉的画还在吗？我们把它捡起来看看——'画错'的那一笔其实可以变成别的东西哦！你看，它像不像一片叶子？"</span></div>
+  <div class="principle">📖 原理：教"错误是学习的机会"的具体做法。把"画错的那笔"变成新东西=向孩子演示"错误不是终点，是新的起点"。参考 P.131。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">97</span>
+  <div class="trigger">🧒 拼图拼不上，急得把拼图扫到地上。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你不会慢慢试啊！急有什么用！全扫地上你高兴了？"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"这块拼图太让人生气了！你试了好多次都拼不上。你想先休息一下喝口水，还是我们一起看看——这块的角是不是不太对？你看，转一下会不会不一样？"</span></div>
+  <div class="principle">📖 原理：共情挫败感 + 暂停选项 + 教解决策略。孩子需要的不是"你要耐心"的说教，而是在他耐心耗尽的时候有人帮他重新找到切入点。参考 P.132。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">98</span>
+  <div class="trigger">🧒 比赛跑步输了，跑过来哭着说"我再也不跑了"。  </div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"输赢正常！别哭了！多跑跑就会赢了！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"输了很难受对吗？完全不想输。但你知道刚才发生了什么吗？你比以前跑得更快了！你还记得上个月你跑到这里要多久吗？现在明显短了！你就是自己的'最快纪录保持者'。"</span></div>
+  <div class="principle">📖 原理：把外在比较（输给别人）转为内在比较（比以前进步）。"自己的最快纪录保持者"这个身份标签，比"你要加油"有力得多。参考 P.131。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">99</span>
+  <div class="trigger">🧒 想自己扣扣子，扣不上就发脾气。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"来来来我给你扣！你自己又扣不上！"（一把抢过来）</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你很想自己扣！这个扣子确实有点难。你想我在旁边陪你继续试，还是我帮你扣下面两个、你扣上面两个？"</span></div>
+  <div class="principle">📖 原理：不剥夺孩子的自主尝试——这是他发展胜任感的关键时刻。用"分工"的方式：他做一部分、你帮一部分，最终目标是全他自己来。参考 P.133。</div>
+</div>
+
+<div class="script-card">
+  <span class="num">100</span>
+  <div class="trigger">🧒 孩子经常说"我不会！你帮我！"但其实他会。</div>
+  <div class="wrong"><span class="label">✕ 常见错误</span><span class="txt">"你怎么什么都说不会！你自己的事情自己做！我不帮你！"</span></div>
+  <div class="correct"><span class="label">✓ 正面管教</span><span class="txt">"你觉得这一步有点难。但我看到你上次做到了其中的一部分。你试一下第一步，如果卡住了，我就在这儿。你可以说——'我需要帮助'而不是'我不会'。"</span></div>
+  <div class="principle">📖 原理：不戳穿"你会"的事实，尊重他说"不会"背后的不自信或想获得关注的需求。教他精确表达（"我需要帮助"），并承诺在旁支持。参考 P.133。让孩子从"我不会"切换到"我需要帮助"，前者是放弃，后者是求助。</div>
+</div>
+
+<!-- ======== CLOSING ======== -->
+<div class="footer">
+  <p style="font-size:16px;font-weight:700;color:#C0392B;">📖 100个亲子对话脚本 · 完</p>
+  <p style="margin-top: 10px;">基于《正面管教 A-Z：日常养育难题的1001个解决方案》拆解</p>
+  <p>由 WorkBuddy AI 辅助生成 · 卷不动躺不平的虎妈 整理</p>
+  <div class="qr-hint">
+    📱 关注公众号「<strong>卷不动躺不平的虎妈</strong>」<br>
+    回复「<strong>正面管教</strong>」获取本文 PDF 打印版<br>
+    回复「<strong>WorkBuddy</strong>」教你用 AI 生成专属育儿话术
+  </div>
+  <p style="margin-top: 20px; font-size: 10px;">
+    ⚠️ 声明：本手册话术基于正面管教核心理念设计，每个孩子个性不同，请根据自家宝宝的实际情况灵活调整。<br>
+    页码参考为《正面管教 A-Z》中文版页码，可能存在版本差异，以书中原理为准。
+  </p>
+</div>
+
+</body>
+</html>

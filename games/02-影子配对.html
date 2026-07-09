@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>游戏二：坦克火箭影子配对</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    display: flex; justify-content: center;
+    background: #f0f0f0;
+  }
+  .page {
+    width: 210mm; min-height: 297mm;
+    background: #FFFEF9;
+    padding: 8mm 10mm 8mm;
+    position: relative; overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  }
+  .header { text-align: center; margin-bottom: 3mm; }
+  .header .num { font-size: 18px; color: #E85D3A; font-weight: 700; letter-spacing: 2px; }
+  .header h1 { font-size: 36px; font-weight: 700; color: #E85D3A; margin: 2px 0; letter-spacing: 3px; }
+  .header .instruction {
+    font-size: 16px; color: #888; margin-top: 2px;
+    background: #FFF5EE; display: inline-block; padding: 3px 22px; border-radius: 22px;
+  }
+  .game-area { text-align: center; margin: 2mm 0; }
+  .hint-box {
+    margin-top: 3mm;
+    padding: 3mm 6mm;
+    background: #FFF8F0;
+    border-radius: 10px;
+    border: 1.5px dashed #E8D5C4;
+    display: flex; align-items: center; gap: 5mm;
+    font-size: 14px; color: #8B7355;
+  }
+  .hint-box .icon { font-size: 28px; }
+  .footer {
+    text-align: center; margin-top: 3mm;
+    font-size: 13px; color: #CCC; letter-spacing: 1px;
+  }
+  @media print {
+    body { background: white; }
+    .page { box-shadow: none; width: 100%; min-height: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="num">🎯 游戏二</div>
+    <h1>影子找朋友</h1>
+    <div class="instruction">✏️ 仔细观察，用线把坦克/火箭和它的影子连起来！</div>
+  </div>
+
+  <div class="game-area">
+    <svg viewBox="0 0 580 820" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:580px;">
+
+      <!-- Decorative BG -->
+      <g opacity="0.1">
+        <circle cx="40" cy="30" r="3" fill="#FFD93D"/>
+        <circle cx="540" cy="60" r="3" fill="#FFD93D"/>
+        <circle cx="70" cy="790" r="3" fill="#FFD93D"/>
+        <circle cx="520" cy="760" r="3" fill="#FFD93D"/>
+      </g>
+
+      <!-- Labels -->
+      <text x="170" y="25" font-size="18" fill="#7EC8A0" font-weight="700" text-anchor="middle">▼ 真身（仔细观察）</text>
+      <text x="410" y="25" font-size="18" fill="#999" font-weight="700" text-anchor="middle">▼ 影子（找出对应的）</text>
+      <line x1="290" y1="40" x2="290" y2="790" stroke="#E8D5C4" stroke-width="1.5" stroke-dasharray="8,6"/>
+
+      <!-- ======================== -->
+      <!-- LEFT SIDE: 6 vehicles    -->
+      <!-- ======================== -->
+
+      <!-- A: Three-booster Rocket -->
+      <g transform="translate(130, 90)">
+        <polygon points="0,-26 -11,-6 11,-6" fill="#FF7B5A"/>
+        <rect x="-10" y="-6" width="20" height="30" rx="7" fill="#FFA07A"/>
+        <circle cx="-5.5" cy="4" r="4" fill="#FFE882"/>
+        <circle cx="5.5" cy="4" r="4" fill="#FFE882"/>
+        <circle cx="0" cy="13" r="4" fill="#FFE882"/>
+        <rect x="-18" y="5" width="7" height="18" rx="3.5" fill="#FF8364"/>
+        <polygon points="-14.5,-3 -18,5 -11,5" fill="#E85D3A"/>
+        <rect x="11" y="5" width="7" height="18" rx="3.5" fill="#FF8364"/>
+        <polygon points="14.5,-3 11,5 18,5" fill="#E85D3A"/>
+        <ellipse cx="0" cy="26" rx="9" ry="5" fill="#FF6B4A" opacity="0.6"/>
+        <circle cx="-4" cy="-14" r="2.2" fill="#FFF"/><circle cx="4" cy="-14" r="2.2" fill="#FFF"/>
+        <circle cx="-4" cy="-14" r="1.1" fill="#333"/><circle cx="4" cy="-14" r="1.1" fill="#333"/>
+        <path d="M-3 -11 Q0 -7 3 -11" fill="none" stroke="#FFF" stroke-width="1" stroke-linecap="round"/>
+      </g>
+      <text x="130" y="150" font-size="16" fill="#666" font-weight="600" text-anchor="middle">A. 三助推火箭</text>
+
+      <!-- B: Three-track Tank -->
+      <g transform="translate(255, 90)">
+        <rect x="-24" y="-8" width="48" height="16" rx="6" fill="#7EC8A0"/>
+        <rect x="-28" y="-4" width="56" height="7" rx="3" fill="#5BAF8A"/>
+        <circle cx="-22" cy="10" r="6" fill="#4A7860" stroke="#3D6350" stroke-width="1.5"/>
+        <circle cx="0" cy="10" r="6" fill="#4A7860" stroke="#3D6350" stroke-width="1.5"/>
+        <circle cx="22" cy="10" r="6" fill="#4A7860" stroke="#3D6350" stroke-width="1.5"/>
+        <rect x="-6" y="-20" width="12" height="14" rx="5" fill="#5BAF8A"/>
+        <rect x="-4" y="-26" width="8" height="8" rx="3" fill="#7EC8A0"/>
+        <circle cx="-5" cy="-14" r="1.8" fill="#FFF"/><circle cx="2" cy="-14" r="1.8" fill="#FFF"/>
+        <circle cx="-5" cy="-14" r="1" fill="#333"/><circle cx="2" cy="-14" r="1" fill="#333"/>
+        <path d="M-3 -11 Q-1 -9 0 -11" fill="none" stroke="#FFF" stroke-width="0.8"/>
+      </g>
+      <text x="255" y="150" font-size="16" fill="#666" font-weight="600" text-anchor="middle">B. 三履带坦克</text>
+
+      <!-- C: Capsule Rocket -->
+      <g transform="translate(130, 265)">
+        <polygon points="0,-24 -9,-6 9,-6" fill="#C9B1D9"/>
+        <rect x="-8" y="-6" width="16" height="28" rx="6" fill="#D9C8E8"/>
+        <circle cx="-4" cy="3" r="3.5" fill="#F0E5F8"/>
+        <circle cx="4" cy="3" r="3.5" fill="#F0E5F8"/>
+        <circle cx="0" cy="11" r="3.5" fill="#F0E5F8"/>
+        <rect x="-6" y="-18" width="12" height="14" rx="7" fill="#E8D5F0"/>
+        <circle cx="0" cy="-16" r="3" fill="#FFE882" opacity="0.7"/>
+        <circle cx="-3" cy="-12" r="1.5" fill="#FFF"/><circle cx="3" cy="-12" r="1.5" fill="#FFF"/>
+        <circle cx="-3" cy="-12" r="0.8" fill="#333"/><circle cx="3" cy="-12" r="0.8" fill="#333"/>
+        <path d="M-2 -10 Q0 -7 2 -10" fill="none" stroke="#FFF" stroke-width="0.8"/>
+      </g>
+      <text x="130" y="325" font-size="16" fill="#666" font-weight="600" text-anchor="middle">C. 载人火箭</text>
+
+      <!-- D: Radar Tank -->
+      <g transform="translate(255, 265)">
+        <rect x="-20" y="-6" width="40" height="12" rx="5" fill="#8BB8E8"/>
+        <rect x="-24" y="-2.5" width="48" height="5" rx="2.5" fill="#6A9FD8"/>
+        <circle cx="-16" cy="7" r="5.5" fill="#3A5A7A" stroke="#2A4A6A" stroke-width="1.2"/>
+        <circle cx="0" cy="7" r="5.5" fill="#3A5A7A" stroke="#2A4A6A" stroke-width="1.2"/>
+        <circle cx="16" cy="7" r="5.5" fill="#3A5A7A" stroke="#2A4A6A" stroke-width="1.2"/>
+        <rect x="-4" y="-17" width="8" height="12" rx="3" fill="#6A9FD8"/>
+        <ellipse cx="0" cy="-20" rx="10" ry="5" fill="#8BB8E8" opacity="0.7" stroke="#6A9FD8" stroke-width="1.5"/>
+        <line x1="0" y1="-25" x2="0" y2="-30" stroke="#6A9FD8" stroke-width="2"/>
+        <circle cx="0" cy="-32" r="2.5" fill="#FF6B4A"/>
+        <circle cx="-5" cy="-9" r="1.5" fill="#FFF"/><circle cx="2" cy="-9" r="1.5" fill="#FFF"/>
+        <circle cx="-5" cy="-9" r="0.8" fill="#333"/><circle cx="2" cy="-9" r="0.8" fill="#333"/>
+      </g>
+      <text x="255" y="325" font-size="16" fill="#666" font-weight="600" text-anchor="middle">D. 雷达坦克</text>
+
+      <!-- E: Long thin Rocket -->
+      <g transform="translate(130, 440)">
+        <polygon points="0,-28 -10,-6 10,-6" fill="#FF8364"/>
+        <rect x="-9" y="-6" width="18" height="32" rx="7" fill="#FFA07A"/>
+        <circle cx="-5" cy="4" r="4" fill="#FFE882"/>
+        <circle cx="5" cy="4" r="4" fill="#FFE882"/>
+        <circle cx="0" cy="14" r="4" fill="#FFE882"/>
+        <ellipse cx="0" cy="28" rx="12" ry="5" fill="#FF6B4A" opacity="0.6"/>
+        <rect x="-11.5" y="-18" width="6" height="12" rx="3" fill="#FFB347"/>
+        <rect x="5.5" y="-18" width="6" height="12" rx="3" fill="#FFB347"/>
+        <circle cx="-4" cy="-14" r="2" fill="#FFF"/><circle cx="4" cy="-14" r="2" fill="#FFF"/>
+        <circle cx="-4" cy="-14" r="1" fill="#333"/><circle cx="4" cy="-14" r="1" fill="#333"/>
+        <path d="M-3 -12 Q0 -8 3 -12" fill="none" stroke="#FFF" stroke-width="1"/>
+      </g>
+      <text x="130" y="505" font-size="16" fill="#666" font-weight="600" text-anchor="middle">E. 长火箭</text>
+
+      <!-- F: Long-barrel Tank -->
+      <g transform="translate(255, 440)">
+        <rect x="-18" y="-6" width="36" height="12" rx="5" fill="#C9B1D9"/>
+        <rect x="-22" y="-2.5" width="44" height="5" rx="2.5" fill="#A88DBF"/>
+        <circle cx="-14" cy="7" r="5" fill="#6B4A7A" stroke="#5B3A6A" stroke-width="1"/>
+        <circle cx="0" cy="7" r="5" fill="#6B4A7A" stroke="#5B3A6A" stroke-width="1"/>
+        <circle cx="14" cy="7" r="5" fill="#6B4A7A" stroke="#5B3A6A" stroke-width="1"/>
+        <rect x="-4" y="-28" width="8" height="23" rx="3" fill="#A88DBF"/>
+        <circle cx="0" cy="-30" r="4.5" fill="#C9B1D9"/>
+        <circle cx="-4" cy="-18" r="1.5" fill="#FFF"/><circle cx="1" cy="-18" r="1.5" fill="#FFF"/>
+        <circle cx="-4" cy="-18" r="0.8" fill="#333"/><circle cx="1" cy="-18" r="0.8" fill="#333"/>
+      </g>
+      <text x="255" y="505" font-size="16" fill="#666" font-weight="600" text-anchor="middle">F. 长炮坦克</text>
+
+
+      <!-- ======================== -->
+      <!-- RIGHT SIDE: 6 shadows     -->
+      <!-- ======================== -->
+      <!-- Shadow 1: Tiny planet + thin body (rocket C's shadow) -->
+      <g transform="translate(450, 100)" opacity="0.45">
+        <polygon points="0,-24 -9,-6 9,-6" fill="#666"/>
+        <rect x="-8" y="-6" width="16" height="28" rx="6" fill="#666"/>
+        <circle cx="-4" cy="3" r="3.5" fill="#666"/>
+        <circle cx="4" cy="3" r="3.5" fill="#666"/>
+        <circle cx="0" cy="11" r="3.5" fill="#666"/>
+        <rect x="-6" y="-18" width="12" height="14" rx="7" fill="#666"/>
+        <circle cx="0" cy="-16" r="3" fill="#666"/>
+      </g>
+      <text x="450" y="140" font-size="14" fill="#999" font-weight="600" text-anchor="middle">① 影子</text>
+
+      <!-- Shadow 2: Box with radar dish (D's shadow) -->
+      <g transform="translate(525, 100)" opacity="0.45">
+        <rect x="-20" y="-6" width="40" height="12" rx="5" fill="#666"/>
+        <rect x="-24" y="-2.5" width="48" height="5" rx="2.5" fill="#666"/>
+        <circle cx="-16" cy="7" r="5.5" fill="#666"/>
+        <circle cx="0" cy="7" r="5.5" fill="#666"/>
+        <circle cx="16" cy="7" r="5.5" fill="#666"/>
+        <rect x="-4" y="-17" width="8" height="12" rx="3" fill="#666"/>
+        <ellipse cx="0" cy="-20" rx="10" ry="5" fill="#666"/>
+        <line x1="0" y1="-25" x2="0" y2="-30" stroke="#666" stroke-width="2"/>
+        <circle cx="0" cy="-32" r="2.5" fill="#666"/>
+      </g>
+      <text x="525" y="140" font-size="14" fill="#999" font-weight="600" text-anchor="middle">② 影子</text>
+
+      <!-- Shadow 3: Three boosters (A's shadow) -->
+      <g transform="translate(450, 275)" opacity="0.45">
+        <polygon points="0,-26 -11,-6 11,-6" fill="#666"/>
+        <rect x="-10" y="-6" width="20" height="30" rx="7" fill="#666"/>
+        <circle cx="-5.5" cy="4" r="4" fill="#666"/>
+        <circle cx="5.5" cy="4" r="4" fill="#666"/>
+        <circle cx="0" cy="13" r="4" fill="#666"/>
+        <rect x="-18" y="5" width="7" height="18" rx="3.5" fill="#666"/>
+        <polygon points="-14.5,-3 -18,5 -11,5" fill="#666"/>
+        <rect x="11" y="5" width="7" height="18" rx="3.5" fill="#666"/>
+        <polygon points="14.5,-3 11,5 18,5" fill="#666"/>
+        <ellipse cx="0" cy="26" rx="9" ry="5" fill="#666"/>
+      </g>
+      <text x="450" y="315" font-size="14" fill="#999" font-weight="600" text-anchor="middle">③ 影子</text>
+
+      <!-- Shadow 4: Three tracks box (B's shadow) -->
+      <g transform="translate(525, 275)" opacity="0.45">
+        <rect x="-24" y="-8" width="48" height="16" rx="6" fill="#666"/>
+        <rect x="-28" y="-4" width="56" height="7" rx="3" fill="#666"/>
+        <circle cx="-22" cy="10" r="6" fill="#666"/>
+        <circle cx="0" cy="10" r="6" fill="#666"/>
+        <circle cx="22" cy="10" r="6" fill="#666"/>
+        <rect x="-6" y="-20" width="12" height="14" rx="5" fill="#666"/>
+        <rect x="-4" y="-26" width="8" height="8" rx="3" fill="#666"/>
+      </g>
+      <text x="525" y="315" font-size="14" fill="#999" font-weight="600" text-anchor="middle">④ 影子</text>
+
+      <!-- Shadow 5: Long barrel (F's shadow) -->
+      <g transform="translate(450, 440)" opacity="0.45">
+        <rect x="-18" y="-6" width="36" height="12" rx="5" fill="#666"/>
+        <rect x="-22" y="-2.5" width="44" height="5" rx="2.5" fill="#666"/>
+        <circle cx="-14" cy="7" r="5" fill="#666"/>
+        <circle cx="0" cy="7" r="5" fill="#666"/>
+        <circle cx="14" cy="7" r="5" fill="#666"/>
+        <rect x="-4" y="-28" width="8" height="23" rx="3" fill="#666"/>
+        <circle cx="0" cy="-30" r="4.5" fill="#666"/>
+      </g>
+      <text x="450" y="483" font-size="14" fill="#999" font-weight="600" text-anchor="middle">⑤ 影子</text>
+
+      <!-- Shadow 6: Long thin tall (E's shadow) -->
+      <g transform="translate(525, 440)" opacity="0.45">
+        <polygon points="0,-28 -10,-6 10,-6" fill="#666"/>
+        <rect x="-9" y="-6" width="18" height="32" rx="7" fill="#666"/>
+        <circle cx="-5" cy="4" r="4" fill="#666"/>
+        <circle cx="5" cy="4" r="4" fill="#666"/>
+        <circle cx="0" cy="14" r="4" fill="#666"/>
+        <ellipse cx="0" cy="28" rx="12" ry="5" fill="#666"/>
+        <rect x="-11.5" y="-18" width="6" height="12" rx="3" fill="#666"/>
+        <rect x="5.5" y="-18" width="6" height="12" rx="3" fill="#666"/>
+      </g>
+      <text x="525" y="483" font-size="14" fill="#999" font-weight="600" text-anchor="middle">⑥ 影子</text>
+
+      <!-- Answer area -->
+      <rect x="30" y="560" width="520" height="80" rx="14" fill="#FFF8F0" stroke="#E8D5C4" stroke-width="2" stroke-dasharray="6,4"/>
+      <text x="50" y="595" font-size="17" fill="#8B7355" font-weight="700">✏️ 答案连线区</text>
+      <text x="50" y="625" font-size="15" fill="#AAA">A — ______　　B — ______　　C — ______　　D — ______　　E — ______　　F — ______</text>
+
+      <!-- Bottom decoration -->
+      <g transform="translate(290, 720)" opacity="0.15">
+        <rect x="-24" y="-8" width="48" height="16" rx="6" fill="#7EC8A0"/>
+        <rect x="-28" y="-4" width="56" height="7" rx="3" fill="#5BAF8A"/>
+        <circle cx="-22" cy="10" r="6" fill="#4A7860"/><circle cx="0" cy="10" r="6" fill="#4A7860"/><circle cx="22" cy="10" r="6" fill="#4A7860"/>
+        <rect x="-6" y="-20" width="12" height="14" rx="5" fill="#5BAF8A"/>
+        <rect x="-4" y="-26" width="8" height="8" rx="3" fill="#7EC8A0"/>
+      </g>
+      <g transform="translate(400, 720)" opacity="0.15">
+        <polygon points="0,-28 -10,-6 10,-6" fill="#FF8364"/>
+        <rect x="-9" y="-6" width="18" height="32" rx="7" fill="#FFA07A"/>
+        <circle cx="-5" cy="4" r="4" fill="#FFE882"/><circle cx="5" cy="4" r="4" fill="#FFE882"/>
+        <ellipse cx="0" cy="28" rx="12" ry="5" fill="#FF6B4A"/>
+      </g>
+
+    </svg>
+  </div>
+
+  <div class="hint-box">
+    <div class="icon">💡</div>
+    <div>
+      <strong>给妈妈的小贴士：</strong>6选6有点挑战！可以引导宝宝观察关键特征："哪个有雷达天线？""哪个尾巴在喷火？"先找最大差异，再比细节。重点不是做对，而是让宝宝说出"为什么是这个影子"。
+    </div>
+  </div>
+
+  <div class="footer">
+    <span style="color:#E85D3A;">♥</span> 妈妈陪你一起冒险 <span style="color:#E85D3A;">♥</span> &nbsp;|&nbsp;
+    完成日期：____月____日 &nbsp;|&nbsp;
+    ⭐ 贴纸奖励 ⭐
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+# PDF files (large)
+*.pdf
+
+# Office documents
+*.docx
+*.xlsx
+*.xls
+*.xmind
+
+# Images
+*.png
+*.jpg
+*.jpeg
+
+# WorkBuddy working files
+.workbuddy/
+
+# System files
+Thumbs.db
+.DS_Store
