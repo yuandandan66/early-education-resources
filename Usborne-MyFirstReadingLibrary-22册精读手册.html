@@ -76,6 +76,30 @@ body { font-family: "PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; b
 .tips-box h4 { color: var(--gold); margin-bottom: 10px; }
 .tips-box ul { padding-left: 20px; }
 .tips-box li { font-size: .88em; color: #6a6040; margin-bottom: 6px; }
+/* 朗读按钮 */
+.speak-btn { display: inline-block; cursor: pointer; margin-left: 8px; font-size: 1em; vertical-align: middle; opacity: 0.45; transition: all 0.2s; user-select: none; }
+.speak-btn:hover { opacity: 1; transform: scale(1.25); }
+.speak-btn.speaking { opacity: 1; animation: speakPulse 0.8s infinite; }
+@keyframes speakPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.35); } }
+
+.text-parent .speak-btn { color: #c8963e; }
+.text-child .speak-btn { color: #42a5f5; }
+
+/* 顺序朗读按钮 */
+.read-all-btn { display: inline-block; background: var(--green); color: #fff; border: none; padding: 5px 14px; border-radius: 6px; cursor: pointer; font-size: 0.75em; margin-left: 12px; vertical-align: middle; white-space: nowrap; transition: 0.2s; }
+.read-all-btn:hover { background: var(--green-dark); }
+.read-all-btn.reading { background: #e53935; animation: speakPulse 1s infinite; }
+
+/* 单词朗读 */
+.vocab-table .word { cursor: pointer; }
+.vocab-table .word:hover { text-decoration: underline; color: var(--gold); }
+.vocab-table .word.speaking { color: var(--gold); }
+
+/* 语速控制 */
+.voice-controls { text-align: center; margin-bottom: 20px; font-size: 0.85em; color: #888; }
+.voice-controls label { margin: 0 8px; }
+.voice-controls input[type="range"] { vertical-align: middle; width: 100px; }
+.voice-controls select { padding: 3px 6px; border-radius: 4px; border: 1px solid var(--border); font-size: 0.9em; }
 </style>
 </head>
 <body>
@@ -100,6 +124,11 @@ body { font-family: "PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; b
 <div class="controls">
 <button onclick="expandAll()">📂 全部展开</button>
 <button onclick="collapseAll()">📁 全部收起</button>
+</div>
+<div class="voice-controls">
+<label>🐌 语速: <input type="range" min="0.5" max="1.2" step="0.05" value="0.85" onchange="changeRate(this.value)"></label>
+<span id="rateLabel">0.85x</span>
+<span style="margin-left:16px;color:#aaa;">💡 每句英文旁有 🔊 按钮，点击朗读 · 每本书有「顺序朗读」</span>
 </div>
 
 <!-- ==================== BOOK 1 ==================== -->
@@ -568,6 +597,7 @@ body { font-family: "PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; b
 </div>
 
 <script>
+/* ===== 书籍展开/收起 ===== */
 function toggleBook(header) {
   header.classList.toggle("open");
   header.nextElementSibling.classList.toggle("open");
@@ -578,6 +608,179 @@ function expandAll() {
 function collapseAll() {
   document.querySelectorAll(".book-header").forEach(h => { h.classList.remove("open"); h.nextElementSibling.classList.remove("open"); });
 }
+
+/* ===== 语音合成 ===== */
+var synth = window.speechSynthesis;
+var availableVoices = [];
+var speechRate = 0.85;
+
+function loadVoices() {
+  availableVoices = synth ? synth.getVoices() : [];
+}
+
+if (synth) {
+  loadVoices();
+  if (synth.onvoiceschanged !== undefined) {
+    synth.onvoiceschanged = loadVoices;
+  }
+}
+
+function getUKVoice() {
+  return availableVoices.find(function(v) { return v.lang === 'en-GB'; })
+      || availableVoices.find(function(v) { return v.lang === 'en-US'; })
+      || availableVoices.find(function(v) { return v.lang && v.lang.indexOf('en') === 0; });
+}
+
+function clearSpeakingState() {
+  document.querySelectorAll('.speak-btn.speaking').forEach(function(b) { b.classList.remove('speaking'); });
+  document.querySelectorAll('.read-all-btn.reading').forEach(function(b) { b.classList.remove('reading'); b.textContent = '\uD83D\uDD0A 顺序朗读'; });
+  document.querySelectorAll('.word.speaking').forEach(function(b) { b.classList.remove('speaking'); });
+}
+
+function speakText(text, btn) {
+  if (!synth) { alert('当前浏览器不支持语音朗读功能，请使用 Chrome 或 Edge 浏览器。'); return; }
+  if (btn && btn.classList.contains('speaking')) { synth.cancel(); clearSpeakingState(); return; }
+  synth.cancel();
+  clearSpeakingState();
+  if (!text) return;
+
+  var u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-GB';
+  u.rate = speechRate;
+  u.pitch = 1.0;
+  var v = getUKVoice();
+  if (v) u.voice = v;
+
+  if (btn) {
+    btn.classList.add('speaking');
+    u.onend = function() { btn.classList.remove('speaking'); };
+    u.onerror = function() { btn.classList.remove('speaking'); };
+  }
+  synth.speak(u);
+}
+
+/* 顺序朗读整本书 */
+function readBookSequentially(content, btn) {
+  if (!synth) { alert('当前浏览器不支持语音朗读功能，请使用 Chrome 或 Edge 浏览器。'); return; }
+  if (btn.classList.contains('reading')) { synth.cancel(); clearSpeakingState(); return; }
+
+  synth.cancel();
+  clearSpeakingState();
+
+  var items = [];
+  content.querySelectorAll('.text-parent, .text-child').forEach(function(el) {
+    var clone = el.cloneNode(true);
+    var label = clone.querySelector('.label');
+    var sBtn = clone.querySelector('.speak-btn');
+    if (label) label.remove();
+    if (sBtn) sBtn.remove();
+    var text = clone.textContent.trim();
+    if (text) items.push({ text: text, el: el });
+  });
+  if (items.length === 0) return;
+
+  btn.classList.add('reading');
+  btn.textContent = '\u23F9 停止朗读';
+
+  var v = getUKVoice();
+  var idx = 0;
+
+  function speakNext() {
+    if (idx >= items.length) {
+      btn.classList.remove('reading');
+      btn.textContent = '\uD83D\uDD0A 顺序朗读';
+      return;
+    }
+    var item = items[idx];
+    var sBtn = item.el.querySelector('.speak-btn');
+    if (sBtn) sBtn.classList.add('speaking');
+
+    var u = new SpeechSynthesisUtterance(item.text);
+    u.lang = 'en-GB';
+    u.rate = speechRate;
+    u.pitch = 1.0;
+    if (v) u.voice = v;
+
+    u.onend = function() {
+      if (sBtn) sBtn.classList.remove('speaking');
+      idx++;
+      speakNext();
+    };
+    u.onerror = function() {
+      if (sBtn) sBtn.classList.remove('speaking');
+      btn.classList.remove('reading');
+      btn.textContent = '\uD83D\uDD0A 顺序朗读';
+    };
+    synth.speak(u);
+  }
+  speakNext();
+}
+
+/* 初始化：给每句英文加朗读按钮 */
+function initSpeakButtons() {
+  document.querySelectorAll('.text-parent, .text-child').forEach(function(el) {
+    if (el.querySelector('.speak-btn')) return;
+
+    var clone = el.cloneNode(true);
+    var label = clone.querySelector('.label');
+    if (label) label.remove();
+    var text = clone.textContent.trim();
+
+    if (text) {
+      var btn = document.createElement('span');
+      btn.className = 'speak-btn';
+      btn.innerHTML = '\uD83D\uDD0A';
+      btn.title = '点击朗读';
+      btn.onclick = function(e) { e.stopPropagation(); speakText(text, btn); };
+      el.appendChild(btn);
+    }
+  });
+
+  /* 给每本书加"顺序朗读"按钮 */
+  document.querySelectorAll('.book-content').forEach(function(content) {
+    var header = content.previousElementSibling;
+    var titleArea = header.querySelector('.book-title-area');
+    if (!titleArea || titleArea.querySelector('.read-all-btn')) return;
+
+    var readAllBtn = document.createElement('button');
+    readAllBtn.className = 'read-all-btn';
+    readAllBtn.textContent = '\uD83D\uDD0A 顺序朗读';
+    readAllBtn.onclick = function(e) { e.stopPropagation(); readBookSequentially(content, readAllBtn); };
+    titleArea.appendChild(readAllBtn);
+  });
+
+  /* 单词表：点击单词朗读 */
+  document.querySelectorAll('.vocab-table .word').forEach(function(td) {
+    var word = td.textContent.trim();
+    td.title = '点击朗读: ' + word;
+    td.onclick = function(e) {
+      e.stopPropagation();
+      speakText(word, td);
+    };
+  });
+}
+
+/* 语速控制 */
+function changeRate(val) {
+  speechRate = parseFloat(val);
+  document.getElementById('rateLabel').textContent = speechRate.toFixed(2) + 'x';
+}
+
+/* 语音选择 */
+function changeVoice(select) {
+  var idx = parseInt(select.value);
+  if (idx >= 0 && availableVoices[idx]) {
+    selectedVoiceOverride = availableVoices[idx];
+  }
+}
+
+var selectedVoiceOverride = null;
+var origGetUK = getUKVoice;
+getUKVoice = function() {
+  return selectedVoiceOverride || origGetUK();
+};
+
+initSpeakButtons();
 </script>
 </body>
 </html>
